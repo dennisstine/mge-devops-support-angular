@@ -1,0 +1,71 @@
+<h3 class="content-header smaller">Header here</h3>
+
+<mat-accordion>
+
+  <!-- java -->
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <span class='icon-container'>
+          <fa-icon [icon]="['fab', 'java']" size="lg"></fa-icon>&nbsp;&nbsp; Java Versions
+        </span>
+    </mat-expansion-panel-header>
+    <div class="content">
+      <mat-table [dataSource]="javaData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Install </mat-header-cell>
+          <mat-cell *matCellDef="let language"> {{language.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="version">
+          <mat-header-cell *matHeaderCellDef> Version </mat-header-cell>
+          <mat-cell *matCellDef="let language"> {{language.version}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="eol">
+          <mat-header-cell *matHeaderCellDef> End of Life </mat-header-cell>
+          <mat-cell *matCellDef="let language"> {{language.endOfLife}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="notes">
+          <mat-header-cell *matHeaderCellDef> Notes </mat-header-cell>
+          <mat-cell *matCellDef="let language"> {{language.notes}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+    </div>
+  </mat-expansion-panel>
+
+  <!-- nodejs -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+         <span class='icon-container'>
+          <fa-icon [icon]="['fab', 'node-js']" size="lg"></fa-icon>&nbsp;&nbsp; NodeJS Versions
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="content">
+      <mat-table [dataSource]="nodeJsData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Install </mat-header-cell>
+          <mat-cell *matCellDef="let language"> {{language.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="version">
+          <mat-header-cell *matHeaderCellDef> Version </mat-header-cell>
+          <mat-cell *matCellDef="let language"> {{language.version}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="eol">
+          <mat-header-cell *matHeaderCellDef> End of Life </mat-header-cell>
+          <mat-cell *matCellDef="let language"> {{language.endOfLife}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="notes">
+          <mat-header-cell *matHeaderCellDef> Notes </mat-header-cell>
+          <mat-cell *matCellDef="let language"> {{language.notes}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

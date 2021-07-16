@@ -1,0 +1,74 @@
+[
+  {
+    "name": "awsuselxdevops01",
+    "webserver": "Apache/2.4.46; Tomcat/10.0.6",
+    "application": "Apache Proxy & OpenGrok",
+    "instance": "t3a.medium",
+    "az": "us-east-1a",
+    "ip": "10.37.226.104",
+    "os": "Amazon Linux 2 (Karoo)"
+  },
+  {
+    "name": "awsuselxmtjenkins01",
+    "webserver": "Winstone/5.16 --> Jetty 9.4.39.v20210325",
+    "application": "Jenkins Master",
+    "instance": "t3a.medium",
+    "az": "us-east-1a",
+    "ip": "10.37.227.77",
+    "os": "CentOS Linux 7.9.2009 "
+  },
+  {
+    "name": "awsuselxmtjenkins-exe01",
+    "webserver": "N/A",
+    "application": "Jenkins Exectutor",
+    "instance": "t3a.medium",
+    "az": "us-east-1a",
+    "ip": "10.37.227.191",
+    "os": "CentOS Linux 7.9.2009 "
+  },
+  {
+    "name": "awsuselxmtsonar01",
+    "webserver": "Tomcat/",
+    "application": "SonarQube",
+    "instance": "t3a.medium",
+    "az": "us-east-1a",
+    "ip": "10.37.227.89",
+    "os": "CentOS Linux 7.9.2009 "
+  },
+  {
+    "name": "awsuselxmtartifactory01",
+    "webserver": "Tomcat/8.5.63",
+    "application": "Artifactory",
+    "instance": "t3a.medium",
+    "az": "us-east-1a",
+    "ip": "10.37.227.38",
+    "os": "CentOS Linux 7.9.2009 "
+  },
+  {
+    "name": "mge-gitlab",
+    "webserver": "nginx/1.18.0",
+    "application": "GitLab CE",
+    "instance": "t3a.large",
+    "az": "us-east-1a",
+    "ip": "10.37.227.118",
+    "os": "Ubuntu 18.04.5 LTS"
+  },
+  {
+    "name": "nagios-int",
+    "webserver": "Apache/2.4.6",
+    "application": "Nagios (Internal)",
+    "instance": "t3a.micro",
+    "az": "us-east-1a",
+    "ip": "10.37.227.182",
+    "os": "CentOS Linux 7.9.2009 "
+  },
+  {
+    "name": "nagios-ext",
+    "webserver": "Apache/2.4.6",
+    "application": "Nagios (External)",
+    "instance": "t3a.micro",
+    "az": "us-east-1f",
+    "ip": "50.16.12.61",
+    "os": "CentOS Linux 7.9.2009 "
+  }
+]

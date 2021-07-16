@@ -1,0 +1,17 @@
+[
+  {
+    "name": "libs-release-local",
+    "description": "Private/internal MGE artifacts",
+    "handles": "releases"
+  },
+  {
+    "name": "libs-snapshot-local",
+    "description": "Private/internal MGE artifacts",
+    "handles": "snapshots"
+  },
+  {
+    "name": "libs-third-party-local",
+    "description": "3rd party dependencies that are not publicly available",
+    "handles": "snapshots, releases"
+  }
+]

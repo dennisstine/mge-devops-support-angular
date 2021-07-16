@@ -1,0 +1,149 @@
+<div class="flexbox-parent container">
+  <div layout="row" layout-align="center center">
+    <h1 class="content-header">Contact the DevOps Team</h1>
+
+    <mat-grid-list cols="12" rowHeight="100px">
+
+      <mat-grid-tile [colspan]="3" [rowspan]="6">
+        <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="custom-grid-container">
+          <mat-card class="custom-contact-card">
+            <mat-card-header class="custom-card-header">
+              <div mat-card-avatar class="avatar-matt"></div>
+              <mat-card-title>Matt Narens</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="mat-divider"></div>
+              <div class="direct-contact-container" [mdePopoverTriggerFor]="qrMatt" mdePopoverTriggerOn="hover">
+                <fa-icon [icon]="['fas', 'phone']" size="lg"></fa-icon>&nbsp; 636-827-1403
+              </div>
+              <div class="direct-contact-container">
+                <fa-icon [icon]="['fas', 'envelope-open-text']" size="lg"></fa-icon>&nbsp; matt.narens@maritz.com
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <mat-card class="custom-contact-card">
+            <mat-card-header class="custom-card-header">
+              <div mat-card-avatar class="avatar-dennis"></div>
+              <mat-card-title>Dennis Stine</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="mat-divider"></div>
+              <div class="direct-contact-container" [mdePopoverTriggerFor]="qrDennis" mdePopoverTriggerOn="hover">
+                <fa-icon [icon]="['fas', 'phone']" size="lg"></fa-icon>&nbsp; 636-827-2856
+              </div>
+              <div class="direct-contact-container">
+                <fa-icon [icon]="['fas', 'envelope-open-text']" size="lg"></fa-icon>&nbsp; dennis.stine@maritz.com
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <p class="mat-caption"><fa-icon [icon]="['fas', 'info-circle']" size="lg"></fa-icon>
+            Hover over phone numbers for direct-call QR codes</p>
+        </div>
+
+        <!-- phone QR popovers -->
+        <mde-popover #qrMatt="mdePopover" [mdePopoverOverlapTrigger]="false">
+          <mat-card class="contact-qr">
+            <mat-card-content>
+              <h4>Scan to call</h4>
+              <img src="assets/images/qr/qr-matt.png"/>
+            </mat-card-content>
+          </mat-card>
+        </mde-popover>
+        <mde-popover #qrDennis="mdePopover" [mdePopoverOverlapTrigger]="false">
+          <mat-card class="contact-qr">
+            <mat-card-title></mat-card-title>
+            <mat-card-content>
+              <h4>Scan to call</h4>
+              <img src="assets/images/qr/qr-dennis.png"/>
+            </mat-card-content>
+          </mat-card>
+        </mde-popover>
+      </mat-grid-tile>
+
+
+      <mat-grid-tile [colspan]="9" [rowspan]="6">
+
+        <mat-accordion class="custom-grid-container accordion">
+
+          <!-- standard contact -->
+          <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Standard Contact Methods
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-table [dataSource]="standardContactData" >
+              <ng-container matColumnDef="method">
+                <mat-header-cell *matHeaderCellDef> Method </mat-header-cell>
+                <mat-cell *matCellDef="let contact">
+                  <div *ngIf="contact.isLink; then thenBlock else elseBlock"></div>
+                  <ng-template #thenBlock>
+                    <a mat-button color="primary" href="{{contact.embeddedText}}" target="_blank">{{contact.method}}</a>
+                  </ng-template>
+                  <ng-template #elseBlock>
+                    <button mat-button disabled>{{contact.method}}</button>
+                  </ng-template>
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="purpose">
+                <mat-header-cell *matHeaderCellDef>Purpose </mat-header-cell>
+                <mat-cell *matCellDef="let contact"> {{contact.purpose}} </mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+
+            <p class="contact-disclaimer">
+              <strong>BITS Tickets</strong> are the preferred method of contact for requests.  Notifications go to team
+              members' inboxes directly and provide a mechanism for tracking requested, in-progress, and completed work.
+              <br/><br/>
+              Correspondence with the requester can also be generated and tracked in the ticket history.
+              <br/><br/>
+              The <strong>MTDevOps inbox</strong> is shared and does not always alert members of new messages.
+              Its primary use is for automated system messages, and outgoing communications.
+              <br/><br/>
+              We try to actively monitor the inbox as much as possible, but immediate responses are not be guaranteed.
+            </p>
+          </mat-expansion-panel>
+          <!-- end standard contact -->
+
+          <!-- elevated contacts -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Production / Urgent / Emergency / After-Hours Contact Methods
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-table [dataSource]="elevatedContactData" >
+              <ng-container matColumnDef="method">
+                <mat-header-cell *matHeaderCellDef> Method </mat-header-cell>
+                <mat-cell *matCellDef="let contact">
+                  <div *ngIf="contact.isLink; then thenBlock else elseBlock"></div>
+                  <ng-template #thenBlock>
+                    <a mat-button color="primary" href="{{contact.embeddedText}}" target="_blank">{{contact.method}}</a>
+                  </ng-template>
+                  <ng-template #elseBlock>
+                    <button mat-button disabled>{{contact.method}}</button>
+                  </ng-template>
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="purpose">
+                <mat-header-cell *matHeaderCellDef>Purpose </mat-header-cell>
+                <mat-cell *matCellDef="let contact"> {{contact.purpose}} </mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <p class="contact-disclaimer">
+              Please use your best judgement - increasing involvement and notifications happen with each escalation option above.
+              <br/><br/>
+              You can also send a message in Teams, or email the 'Pager - ' entries in the Outlook directory to send a text message.
+            </p>
+          </mat-expansion-panel>
+          <!-- end elevated contact -->
+        </mat-accordion>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

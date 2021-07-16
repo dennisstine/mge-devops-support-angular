@@ -1,0 +1,23 @@
+<div class="flexbox-parent container">
+  <div layout="row" layout-align="center center">
+
+    <h1 class="content-header">
+      Supported AWS Tools & Technologies
+      <small>
+        <a mat-button href="{{awsSsoUrl}}" color="primary" target="_blank">
+          AWS Single Sign-On&nbsp;<fa-icon [icon]="['fas', 'sign-in-alt']" size="lg"></fa-icon>
+        </a>
+      </small>
+    </h1>
+
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link *ngFor="let tab of tabs"
+         (click)="activeLink = tab"
+         [routerLink]="tab.route"
+         routerLinkActive #rla="routerLinkActive"
+         [active]="rla.isActive">
+        {{tab.label}} </a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+[
+  { "name": "Buckets in maritz-travel-aws (095171238710)",
+    "children": [
+      {
+        "name": "external",
+        "children": [
+          {
+            "name": "content.travelhq.com"
+          },
+          {
+            "name": "content-test.travelhq.com"
+          },
+          {
+            "name": "content-dev.travelhq.com"
+          }
+        ]
+      },
+      {
+        "name": "internal",
+        "children": [
+          {
+            "name": "contentinternal.travelhq.com"
+          },
+          {
+            "name": "contentinternal-test.travelhq.com"
+          },
+          {
+            "name": "contentinternal-dev.travelhq.com"
+          }
+        ]
+      }
+    ]
+  }
+]

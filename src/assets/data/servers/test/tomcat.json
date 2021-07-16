@@ -1,0 +1,74 @@
+[
+  {
+    "name": "awsuselxmtwapt30",
+    "webserver": "Tomcat/9.0.22",
+    "application": "THQ",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.18.30",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapt31",
+    "webserver": "Tomcat/9.0.22",
+    "application": "THQ",
+    "instance": "r5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.26.31",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapt32",
+    "webserver": "Tomcat/9.0.22",
+    "application": "Internal",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.18.32",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapt33",
+    "webserver": "Tomcat/9.0.22",
+    "application": "Internal",
+    "instance": "r5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.26.33",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapt34",
+    "webserver": "Tomcat/9.0.31",
+    "application": "LPL",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.18.34",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapt35",
+    "webserver": "Tomcat/9.0.31",
+    "application": "LPL",
+    "instance": "r5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.26.35",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtgemt34",
+    "webserver": "Tomcat/9.0.22",
+    "application": "GEM",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.16.34",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtgemt35",
+    "webserver": "Tomcat/9.0.22",
+    "application": "GEM",
+    "instance": "r5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.24.35",
+    "os": "RHEL 7.9 (Maipo)"
+  }
+]

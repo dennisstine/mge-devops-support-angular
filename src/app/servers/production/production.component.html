@@ -1,0 +1,193 @@
+<h3 class="content-header smaller">mge-corp-prod (336971477183)</h3>
+
+<!-- Production Tomcat -->
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Tomcat Servers
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-table [dataSource]="prodTomcatData" class="mat-elevation-z8" matTableExporter #prodTcExporter="matTableExporter">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="webserver">
+        <mat-header-cell *matHeaderCellDef> Web Server </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.webserver}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="application">
+        <mat-header-cell *matHeaderCellDef> Application </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.application}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="instance">
+        <mat-header-cell *matHeaderCellDef> Instance </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.instance}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="az">
+        <mat-header-cell *matHeaderCellDef> Availability Zone </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.az}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ip">
+        <mat-header-cell *matHeaderCellDef> IP </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.ip}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="os">
+        <mat-header-cell *matHeaderCellDef> Operating System </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.os}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedWebColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedWebColumns;"></mat-row>
+    </mat-table>
+    <button mat-raised-button class="mat-primary download-btn"
+            (click)="prodTcExporter.exportTable('csv', {fileName:'aws-prod-tc-list'})">
+      <fa-icon [icon]="['fas', 'download']"></fa-icon>&nbsp;Download CSV</button>
+  </mat-expansion-panel>
+  <!-- End Production Tomcat -->
+
+  <!-- Production JBoss -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        JBoss Servers
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-table [dataSource]="prodJbossData" class="mat-elevation-z8" matTableExporter #prodJbossExporter="matTableExporter">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="webserver">
+        <mat-header-cell *matHeaderCellDef> Web Server </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.webserver}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="application">
+        <mat-header-cell *matHeaderCellDef> Application </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.application}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="instance">
+        <mat-header-cell *matHeaderCellDef> Instance </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.instance}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="az">
+        <mat-header-cell *matHeaderCellDef> Availability Zone </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.az}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ip">
+        <mat-header-cell *matHeaderCellDef> IP </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.ip}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="os">
+        <mat-header-cell *matHeaderCellDef> Operating System </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.os}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedWebColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedWebColumns;"></mat-row>
+    </mat-table>
+    <button mat-raised-button class="mat-primary download-btn"
+            (click)="prodJbossExporter.exportTable('csv', {fileName:'aws-prod-jboss-list'})">
+      <fa-icon [icon]="['fas', 'download']"></fa-icon>&nbsp;Download CSV</button>
+  </mat-expansion-panel>
+  <!-- End Production JBoss -->
+
+  <!-- Production Apache -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Apache Servers
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-table [dataSource]="prodApacheData" class="mat-elevation-z8" matTableExporter #prodApacheExporter="matTableExporter">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="webserver">
+        <mat-header-cell *matHeaderCellDef> Web Server </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.webserver}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="application">
+        <mat-header-cell *matHeaderCellDef> Application </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.application}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="instance">
+        <mat-header-cell *matHeaderCellDef> Instance </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.instance}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="az">
+        <mat-header-cell *matHeaderCellDef> Availability Zone </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.az}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ip">
+        <mat-header-cell *matHeaderCellDef> IP </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.ip}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="os">
+        <mat-header-cell *matHeaderCellDef> Operating System </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.os}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedWebColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedWebColumns;"></mat-row>
+    </mat-table>
+    <button mat-raised-button class="mat-primary download-btn"
+            (click)="prodApacheExporter.exportTable('csv', {fileName:'aws-prod-apache-list'})">
+      <fa-icon [icon]="['fas', 'download']"></fa-icon>&nbsp;Download CSV</button>
+  </mat-expansion-panel>
+  <!-- End Production Apache -->
+
+  <!-- Production SQL -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        SQL Server
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-table [dataSource]="prodSqlData" class="mat-elevation-z8" matTableExporter #prodSqlExporter="matTableExporter">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="sqlserver">
+        <mat-header-cell *matHeaderCellDef> Web Server </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.sqlserver}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="application">
+        <mat-header-cell *matHeaderCellDef> Application </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.application}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="instance">
+        <mat-header-cell *matHeaderCellDef> Instance </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.instance}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="az">
+        <mat-header-cell *matHeaderCellDef> Availability Zone </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.az}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ip">
+        <mat-header-cell *matHeaderCellDef> IP </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.ip}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="os">
+        <mat-header-cell *matHeaderCellDef> Operating System </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.os}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedSqlColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedSqlColumns;"></mat-row>
+    </mat-table>
+    <button mat-raised-button class="mat-primary download-btn"
+            (click)="prodSqlExporter.exportTable('csv', {fileName:'aws-prod-sql-list'})">
+      <fa-icon [icon]="['fas', 'download']"></fa-icon>&nbsp;Download CSV</button>
+  </mat-expansion-panel>
+  <!-- End Production SQL -->
+</mat-accordion>

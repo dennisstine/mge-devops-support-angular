@@ -1,0 +1,17 @@
+<div class="flexbox-parent container">
+  <div layout="row" layout-align="center center">
+
+    <h1 class="content-header">Tools Owned/Supported by MGE DevOps</h1>
+    <h3>Links open in a new tab/window <fa-icon [icon]="['fas', 'external-link-alt']"></fa-icon></h3>
+
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link *ngFor="let tab of tabs"
+         (click)="activeLink = tab"
+         [routerLink]="tab.route"
+         routerLinkActive #rla="routerLinkActive"
+         [active]="rla.isActive">
+        {{tab.label}} </a>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>
+</div>

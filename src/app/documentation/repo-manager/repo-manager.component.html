@@ -1,0 +1,369 @@
+<h3 class="content-header smaller">Header here</h3>
+
+<mat-accordion>
+
+  <!-- maven repositories -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <span class='icon-container'>
+          <fa-icon [icon]="['fab', 'java']" size="2x"></fa-icon>&nbsp; Java Repositories
+        </span>
+    </mat-expansion-panel-header>
+    <div class="content" id="m2-content">
+
+      <!-- virtual -->
+      <h3 class="content-header smaller">Virtual/Combined Repositories</h3>
+      <mat-table [dataSource]="m2VirtualData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+
+      <!-- local/hosted -->
+      <h3 class="content-header smaller">Local Repositories</h3>
+      <mat-table [dataSource]="m2LocalData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+
+      <!-- remote/mirrored -->
+      <h3 class="content-header smaller">Remote/Mirrored Repositories</h3>
+      <mat-table [dataSource]="m2RemoteData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+    </div>
+  </mat-expansion-panel>
+
+
+  <!-- docker registries -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span class='icon-container'>
+          <fa-icon [icon]="['fab', 'npm']" size="2x"></fa-icon>&nbsp; NodeJS Registries
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="content" id="npm-content">
+
+      <!-- virtual -->
+      <h3 class="content-header smaller">Remote/Mirrored Repositories</h3>
+      <mat-table [dataSource]="m2VirtualData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+
+      <!-- local/hosted -->
+      <h3 class="content-header smaller">Local Repositories</h3>
+      <mat-table [dataSource]="m2LocalData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+
+      <!-- remote/mirrored -->
+      <h3 class="content-header smaller">Remote/Mirrored Repositories</h3>
+      <mat-table [dataSource]="m2RemoteData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+    </div>
+  </mat-expansion-panel>
+
+
+  <!-- npm registries -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span class='icon-container'>
+          <fa-icon [icon]="['fab', 'docker']" size="2x"></fa-icon>&nbsp; Docker Registries
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="content" id="npm-content">
+
+      <!-- virtual -->
+      <h3 class="content-header smaller">Remote/Mirrored Repositories</h3>
+      <mat-table [dataSource]="m2VirtualData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+
+      <!-- local/hosted -->
+      <h3 class="content-header smaller">Local Repositories</h3>
+      <mat-table [dataSource]="m2LocalData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+
+      <!-- remote/mirrored -->
+      <h3 class="content-header smaller">Remote/Mirrored Repositories</h3>
+      <mat-table [dataSource]="m2RemoteData" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.name}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="handles">
+          <mat-header-cell *matHeaderCellDef> Handles </mat-header-cell>
+          <mat-cell *matCellDef="let repo"> {{repo.handles}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedM2Columns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedM2Columns;"></mat-row>
+      </mat-table>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-divider></mat-divider>
+
+
+<!-- m2 settings -->
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <fa-icon [icon]="['fas', 'list-ol']" size="lg"></fa-icon>&nbsp; Setup Artifactory M2 settings.xml
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list role="list">
+      <div mat-subheader>Downloading / Installing&nbsp;<a href="{{mavenUrl}}" target="_blank">Apache Maven</a></div>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp; Download the .zip distribution from&nbsp;
+        <a href="{{mavenDownloadUrl}}">here</a>&nbsp;(v3.8.1).
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        Extract the contents of the .zip locally (e.g. into C:\Apps\). &nbsp;
+        <span [mdePopoverTriggerFor]="extractedMvn" mdePopoverTriggerOn="hover">
+              <fa-icon [icon]="['far', 'image']" size="lg"></fa-icon>
+            </span>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        Click on Start, search for and open "Edit environment variables for your account". &nbsp;
+        <span [mdePopoverTriggerFor]="startSearch" mdePopoverTriggerOn="hover">
+              <fa-icon [icon]="['far', 'image']" size="lg"></fa-icon>
+            </span>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        Under "User variables for...", click on New and add an entry for M2_HOME, assigning it to the location
+        that you downloaded the .zip to previously. &nbsp;
+        <span [mdePopoverTriggerFor]="addM2" mdePopoverTriggerOn="hover">
+              <fa-icon [icon]="['far', 'image']" size="lg"></fa-icon>
+            </span>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        Again, Under "User variables for...", select "Path" and click on Edit.  Add a new entry for the \bin
+        directory of M2_HOME: %M2_HOME%\bin. &nbsp;
+        <span [mdePopoverTriggerFor]="editPath" mdePopoverTriggerOn="hover">
+              <fa-icon [icon]="['far', 'image']" size="lg"></fa-icon>
+            </span>
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        Click OK to close the system settings.
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        To test, open CMD and type <pre><code>mvn -v</code></pre> which should now resolve to a
+        command and point to the new installation. &nbsp;
+        <span [mdePopoverTriggerFor]="testMvn" mdePopoverTriggerOn="hover">
+              <fa-icon [icon]="['far', 'image']" size="lg"></fa-icon>
+            </span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <div mat-subheader>
+        <fa-icon [icon]="['fas', 'list-ol']" size="lg"></fa-icon>&nbsp; Setting Artifactory as the default M2 repository
+      </div>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        Download the pre-configured settings.xml file from&nbsp;
+        <a href="{{mavenSettingsUrl}}">here</a>.
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        Copy settings.xml to the conf directory of your extracted maven distribution e.g.
+        C:\Apps\apache-maven-3.8.1\conf.
+      </mat-list-item>
+      <mat-list-item role="listitem">
+        <fa-icon [icon]="['fas', 'chevron-right']"></fa-icon>&nbsp;
+        When running <pre><code>mvn [plugin]:[goal]</code></pre>, you should see https://artifactory.travelhq.com
+        listed as the source for downloads.  <pre><code>mvn help:active-profiles</code></pre>: &nbsp;
+        <span [mdePopoverTriggerFor]="mvnArtifactory" mdePopoverTriggerOn="hover">
+              <fa-icon [icon]="['far', 'image']" size="lg"></fa-icon>
+            </span>
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <fa-icon [icon]="['fas', 'bezier-curve']" size="lg"></fa-icon>&nbsp; Maven M2 Artifact Resolution
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <img src="../../../assets/images/documentation/repo-manager/m2-resolution.mermaid-lr.svg" />
+    <a mat-raised-button class="mat-primary"
+       href="../../../assets/images/documentation/repo-manager/m2-resolution.mermaid-lr.svg" target="_blank">
+      <fa-icon [icon]="['fas', 'download']"></fa-icon>&nbsp;Download</a>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<!-- image overlays -->
+<mde-popover #extractedMvn="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <mat-card class="contact-qr">
+    <mat-card-content>
+      <img src="../../../assets/images/documentation/repo-manager/maven/mvn-extracted.png"/>
+    </mat-card-content>
+  </mat-card>
+</mde-popover>
+
+<mde-popover #startSearch="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <mat-card class="contact-qr">
+    <mat-card-content>
+      <img src="../../../assets/images/documentation/repo-manager/maven/edit-env-vars.png"/>
+    </mat-card-content>
+  </mat-card>
+</mde-popover>
+
+<mde-popover #addM2="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <mat-card class="contact-qr">
+    <mat-card-content>
+      <img src="../../../assets/images/documentation/repo-manager/maven/set-m2-home.png"/>
+    </mat-card-content>
+  </mat-card>
+</mde-popover>
+
+<mde-popover #editPath="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <mat-card class="contact-qr">
+    <mat-card-content>
+      <img src="../../../assets/images/documentation/repo-manager/maven/edit-path.png"/>
+    </mat-card-content>
+  </mat-card>
+</mde-popover>
+
+<mde-popover #testMvn="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <mat-card class="contact-qr">
+    <mat-card-content>
+      <img src="../../../assets/images/documentation/repo-manager/maven/mvn-test.png"/>
+    </mat-card-content>
+  </mat-card>
+</mde-popover>
+<mde-popover #mvnArtifactory="mdePopover" [mdePopoverOverlapTrigger]="false">
+  <mat-card class="contact-qr">
+    <mat-card-content>
+      <img src="../../../assets/images/documentation/repo-manager/maven/mvn-artifactory-check.png"/>
+    </mat-card-content>
+  </mat-card>
+</mde-popover>

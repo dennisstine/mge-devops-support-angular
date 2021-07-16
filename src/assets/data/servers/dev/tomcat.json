@@ -1,0 +1,20 @@
+[
+  {
+    "name": "awsuselxmtd04",
+    "webserver": "Tomcat/9.0.22",
+    "application": "Internal",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.34.14",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtd010",
+    "webserver": "Tomcat/9.0.22",
+    "application": "THQ",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.34.10",
+    "os": "RHEL 7.9 (Maipo)"
+  }
+]

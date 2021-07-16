@@ -1,0 +1,20 @@
+[
+  {
+    "name": "awsuselxmtpxyt30",
+    "webserver": "Apache/2.6.4",
+    "application": "Proxy",
+    "instance": "m5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.19.30",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtpxyt31",
+    "webserver": "Apache/2.6.4",
+    "application": "Proxy",
+    "instance": "m5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.27.31",
+    "os": "RHEL 7.9 (Maipo)"
+  }
+]

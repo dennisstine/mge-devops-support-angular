@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Java 11",
+    "version": "java-11-openjdk-11.0.9.11-0.amzn2.0.1.x86_64",
+    "endOfLife": "July 2027 (last update) / September 2027 (E.O.L.)",
+    "notes": "Amazon Corretto - used with OpenGrok"
+  },
+  {
+    "name": "Java 11",
+    "version": "java-11-openjdk-11.0.11.0.9-1.el7_9.x86_64",
+    "endOfLife": "September 2023 (active) / September 2026 (security / E.O.L.)",
+    "notes": "SonarQube currently requires Java 11"
+  },
+  {
+    "name": "Java 8",
+    "version": "java-1.8.0-openjdk-1.8.0.222.b10-1.el7_7.x86_64",
+    "endOfLife": "March 2022 (active) / March 2025 (security / E.O.L.)",
+    "notes": "Tomcat 9 JRE"
+  },
+  {
+    "name": "Java 7",
+    "version": "java-1.7.0-openjdk-1.7.0.261-2.6.22.1.el6_10.x86_64",
+    "endOfLife": "July 2019 (active) / July 2022 (security / E.O.L.)",
+    "notes": "JBoss JRE - 2.6.22.1 security patch"
+  }
+]

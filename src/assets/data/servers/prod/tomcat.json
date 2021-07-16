@@ -1,0 +1,92 @@
+[
+  {
+    "name": "awsuselxmtwapp40",
+    "webserver": "Tomcat/9.0.22",
+    "application": "THQ",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.2.40",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapp41",
+    "webserver": "Tomcat/9.0.22",
+    "application": "THQ",
+    "instance": "r5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.10.41",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapp42",
+    "webserver": "Tomcat/9.0.22",
+    "application": "THQ",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.2.42",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapp43",
+    "webserver": "Tomcat/9.0.31",
+    "application": "LPL",
+    "instance": "r5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.10.43",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapp44",
+    "webserver": "Tomcat/9.0.31",
+    "application": "LPL",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.2.44",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapp45",
+    "webserver": "Tomcat/9.0.31",
+    "application": "LPL",
+    "instance": "r5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.10.45",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapp50",
+    "webserver": "Tomcat/9.0.22",
+    "application": "Internal",
+    "instance": "r5.large",
+    "az": "us-east-1a",
+    "ip": "10.37.2.50",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtwapp51",
+    "webserver": "Tomcat/9.0.22",
+    "application": "Internal",
+    "instance": "r5.large",
+    "az": "us-east-1b",
+    "ip": "10.37.10.51",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtgemp50",
+    "webserver": "Tomcat/9.0.22",
+    "application": "GEM",
+    "instance": "t3.large",
+    "az": "us-east-1a",
+    "ip": "10.37.0.50",
+    "os": "RHEL 7.9 (Maipo)"
+  },
+  {
+    "name": "awsuselxmtgemp51",
+    "webserver": "Tomcat/9.0.22",
+    "application": "GEM",
+    "instance": "t3.large",
+    "az": "us-east-1b",
+    "ip": "10.37.8.51",
+    "os": "RHEL 7.9 (Maipo)"
+  }
+]

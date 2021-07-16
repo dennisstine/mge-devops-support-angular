@@ -1,0 +1,56 @@
+[
+  {
+    "name": "awsuselxmtp16",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "Internal",
+    "instance": "r3.large",
+    "az": "us-east-1a",
+    "ip": "10.37.2.16",
+    "os": "RHEL 6.10 (Santiago)"
+  },
+  {
+    "name": "awsuselxmtp17",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "Internal",
+    "instance": "r3.large",
+    "az": "us-east-1b",
+    "ip": "10.37.10.17",
+    "os": "RHEL 6.10 (Santiago)"
+  },
+  {
+    "name": "awsuselxmtp21",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "THQ",
+    "instance": "r3.large",
+    "az": "us-east-1b",
+    "ip": "10.37.11.21",
+    "os": "RHEL 6.10 (Santiago)"
+  },
+  {
+    "name": "awsuselxmtp22",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "THQ",
+    "instance": "r3.large",
+    "az": "us-east-1a",
+    "ip": "10.37.2.22",
+    "os": "RHEL 6.10 (Santiago)"
+  },
+  {
+    "name": "awsuselxmtp23",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "THQ",
+    "instance": "r3.large",
+    "az": "us-east-1b",
+    "ip": "10.37.10.23",
+    "os": "RHEL 6.10 (Santiago)"
+  },
+  {
+    "name": "awsuselxmtp24",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "THQ",
+    "instance": "r3.large",
+    "az": "us-east-1a",
+    "ip": "10.37.2.24",
+    "os": "RHEL 6.10 (Santiago)"
+  }
+]

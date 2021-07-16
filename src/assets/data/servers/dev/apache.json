@@ -1,0 +1,11 @@
+[
+  {
+    "name": "awsuselxmtpxyd01",
+    "webserver": "Apache/2.4.6",
+    "application": "Proxy",
+    "instance": "t3.medium",
+    "az": "us-east-1a",
+    "ip": "10.37.32.11",
+    "os": "7.7 (Maipo)"
+  }
+]

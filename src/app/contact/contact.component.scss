@@ -1,0 +1,50 @@
+.avatar-matt {
+  background-image: url('../../assets/images/avatars/team/matt.jpg');
+  background-size: cover;
+}
+
+.avatar-dennis {
+  background-image: url('../../assets/images/avatars/team/dennis.jpg');
+  background-size: cover;
+}
+
+.custom-contact-card {
+  width: 100% !important;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.custom-grid-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.custom-grid-container.accordion {
+  padding-top: 20px;
+  width: 95% !important;
+}
+
+.direct-contact-container {
+  padding-top: 10px;
+}
+
+.custom-card-header {
+  padding-bottom: 15px;
+}
+
+.direct-contact-container > i {
+  display: inline-flex !important;
+  vertical-align: middle !important;
+}
+
+.contact-disclaimer {
+  padding-top: 20px;
+}
+
+.contact-qr {
+  text-align: center !important;
+}
+
+.contact-qr > mat-card-content > img {
+  max-width: 100px !important;
+}

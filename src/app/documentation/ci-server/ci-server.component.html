@@ -1,0 +1,332 @@
+<h3 class="content-header smaller">CI/CD Server Documentation</h3>
+
+
+
+<!-- permissions matrix -->
+<mat-expansion-panel [expanded]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Permissions Matrix
+    </mat-panel-title>
+    <mat-panel-description>
+      Based on Active Directory group membership
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="table-container">
+    <mat-table [dataSource]="combinedData" class="mat-elevation-z8">
+
+      <!-- group headers -->
+      <ng-container [matColumnDef]="group.id"
+                    *ngFor="let group of headerGroupings; let even = even; let odd = odd; let isFirst = first;"
+                    [sticky]="isSticky(group.id)">
+
+        <th mat-header-cell *matHeaderCellDef [attr.colspan]="group.width" [attr.rowspan]="group.height"
+            [ngClass]="{ odd: odd, even: even, groupedHeader: true}" >
+          {{group.name}}
+        </th>
+
+      </ng-container>
+
+      <!-- group column - sticky for scrolling 0-->
+      <ng-container matColumnDef="group" [sticky]=true>
+        <th mat-header-cell *matHeaderCellDef><div><span> User / Group </span></div></th>
+        <td mat-cell *matCellDef="let data" class="user-group-col">
+          <fa-icon [icon]="data.group.startsWith('MGE') ? ['fas','user-friends'] : ['fas','user']" size="lg"></fa-icon>
+          &nbsp;{{data.group}}
+        </td>
+      </ng-container>
+
+      <!-- overall columns -->
+      <ng-container matColumnDef="overall1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Administer </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.overall1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="overall2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Read </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.overall2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- credentials columns -->
+      <ng-container matColumnDef="creds1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Create </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.creds1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="creds2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Delete </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.creds2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="creds3">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Manage Domains </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.creds3 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="creds4">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Update </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.creds4 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="creds5">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> View </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.creds5 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- agent columns -->
+      <ng-container matColumnDef="agent1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Build </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.agent1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="agent2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Configure </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.agent2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="agent3">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Connect </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.agent3 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="agent4">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Create </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.agent4 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="agent5">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Delete </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.agent5 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="agent6">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Disconnect </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.agent6 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!--job columns -->
+      <ng-container matColumnDef="job1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Build </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="job2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Cancel </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="job3">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Configure </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job3 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="job4">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Create </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job4 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="job5">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Delete </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job5 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="job6">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Discover </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job6 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="job7">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Move </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job7 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon></td>
+      </ng-container>
+
+      <ng-container matColumnDef="job8">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Read </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job8 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="job9">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> View Status </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job9 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="job10">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Workspace </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.job10 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- run columns -->
+      <ng-container matColumnDef="runs1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Delete </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.runs1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="runs2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Replay </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.runs2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="runs3">
+        <th mat-header-cell *matHeaderCellDef class="rotate"> <div><span> Update </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.runs3 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- view columns -->
+      <ng-container matColumnDef="view1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Configure </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.view1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="view2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Create </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.view2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="view3">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Delete </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.view3 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="view4">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Read </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.view4 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- job config history columns -->
+      <ng-container matColumnDef="configHist1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Delete Entry </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.configHist1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- scm columns -->
+      <ng-container matColumnDef="scm1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Tag </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.scm1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- lockable resources columns -->
+      <ng-container matColumnDef="lockable1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Reserve </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.lockable1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lockable2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Unlock </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.lockable2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lockable3">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> View </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.lockable3 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- scriptler columns -->
+      <ng-container matColumnDef="scriptler1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Configure </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.scriptler1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="scriptler2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Run Scripts </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.scriptler2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <!-- artifactory columns -->
+      <ng-container matColumnDef="artifactory1">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Promote </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.artifactory1 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="artifactory2">
+        <th mat-header-cell *matHeaderCellDef class="rotate"><div><span> Release </span></div></th>
+        <td mat-cell *matCellDef="let data">
+          <fa-icon [icon]="data.artifactory2 ? ['fas','check-square'] : ['far','square']" size="lg"></fa-icon>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="headerGroupingsIds"></tr>
+      <tr mat-header-row *matHeaderRowDef="columnIds"></tr>
+
+      <tr mat-row *matRowDef="let row; columns: columnIds;"></tr>
+
+    </mat-table>
+  </div>
+</mat-expansion-panel>
+
+
+

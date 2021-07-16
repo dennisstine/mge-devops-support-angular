@@ -1,0 +1,29 @@
+graph LR
+    %% Developers code, commit, push to GitLab, repeat
+    DEV["fas:fa-code Developer Codes"] --> | fas:fa-code-branch Push Changes | GITLAB("fab:fa-gitlab GitLab")
+    GITLAB -.-> | fas:fa-user-edit Changes Needed | DEV
+    GITLAB --> JENKINS("fab:fa-jenkins Jenkins")
+
+    JENKINS --> TYPE{"Build or Deploy?"}
+    TYPE --> | Build | BUILD("far:fa-file-archive Create/Bundle Asset(s)")
+    TYPE --> | Backend | DEPLOY-BE("Retieve Asset(s)")
+    BUILD --> PACKAGE("fas:fa-upload Upload Archive(s)")
+    PACKAGE --> | Backend | PACKAGE-BE{"Release or SNAPSHOT?"}
+
+    PACKAGE-BE --> | Release | RT-RELEASE
+    PACKAGE-BE -.-> | Snapshot | RT-SNAPSHOT
+
+    DEPLOY-BE --> DEPLOY-BE-ENV{"Environment?"}
+
+    RT-RELEASE -.-> | fas:fa-cloud-upload-alt Version | DEPLOY-BE
+    RT-SNAPSHOT -.-> | fas:fa-cloud-upload-alt Latest | DEPLOY-BE
+
+    DEPLOY-BE-ENV --> | Development | DEPLOY-BE-ENV-DEV("fas:fa-server Deploy Release/Snapshot")
+    DEPLOY-BE-ENV --> | Test | DEPLOY-BE-ENV-TEST-RELEASE("fas:fa-server Deploy Release")
+    DEPLOY-BE-ENV --> |Production | DEPLOY-BE-ENV-PROD-RELEASE("fas:fa-server Deploy Release")
+
+    subgraph REPO ["Artifactory"]
+      RT-RELEASE["libs-release-local"]
+      RT-SNAPSHOT["libs-snapshot-local"]
+    end
+

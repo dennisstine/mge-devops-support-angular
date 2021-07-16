@@ -1,0 +1,39 @@
+flowchart TB
+USER([Request]) --> RT
+RT{{Artifactory}} --> TYPE
+TYPE{Snapshot?}
+TYPE -->| Yes | SNAPSHOT_TYPE
+TYPE -->| No | RELEASE_TYPE
+
+SNAPSHOT_TYPE{Internal?} -->| Yes | SNAPSHOTS_MGE
+SNAPSHOT_TYPE{Internal?} -->| No | REMOTES
+
+RELEASE_TYPE{Internal?} -->| Yes | RELEASES_MGE
+RELEASE_TYPE{Internal?} -->| No | REMOTES
+
+subgraph REMOTES[public-remote-repos]
+  direction LR
+  JCENTER[(jcenter)] -.-
+  REPO1[(repo1)] -.-
+  SONATYPE[(sonatype)]
+end
+
+subgraph SNAPSHOTS_MGE[MGE-hosted SNAPSHOTS]
+  direction TB
+  SNAPSHOT_LOCAL[(libs-snapshot-local)] -.-
+  SNAPSHOT_3RD_PARTY_LOCAL[(libs-third-party-local)]
+end
+
+subgraph RELEASES_MGE[MGE-hosted RELEASES]
+  direction TB
+  RELEASE_LOCAL[(libs-release-local)] -.-
+  RELEASE_3RD_PARTY_LOCAL[(libs-third-party-local)]
+end
+
+subgraph NEXUS[mge-remote-repos]
+  direction TB
+  LEGACY_M2[(mge-legacy-nexus)]
+end
+
+NEXUS -.-> SNAPSHOTS_MGE
+NEXUS -.-> RELEASES_MGE

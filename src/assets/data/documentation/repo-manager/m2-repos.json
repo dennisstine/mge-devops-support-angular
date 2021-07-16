@@ -1,0 +1,65 @@
+[
+  {
+    "local": [
+      {
+        "name": "libs-release-local",
+        "description": "Private/internal MGE artifacts",
+        "handles": "releases"
+      },
+      {
+        "name": "libs-snapshot-local",
+        "description": "Private/internal MGE artifacts",
+        "handles": "snapshots"
+      },
+      {
+        "name": "libs-third-party-local",
+        "description": "3rd party dependencies that are not publicly available",
+        "handles": "snapshots, releases"
+      }
+    ],
+    "remote": [
+      {
+        "name": "mge-legacy-nexus",
+        "description": "Proxy to Nexus for caching previous MGE artifacts into Artifactory as requested",
+        "handles": "snapshots, releases"
+      },
+      {
+        "name": "jcenter",
+        "description": "Public Maven repository",
+        "handles": "snapshots, releases"
+      },
+      {
+        "name": "repo1",
+        "description": "Public Maven repository",
+        "handles": "snapshots, releases"
+      },
+      {
+        "name": "sonatype",
+        "description": "Public Maven repository",
+        "handles": "releases"
+      }
+    ],
+    "virtual": [
+      {
+        "name": "libs-release",
+        "description": "Combines libs-release-local, libs-third-party-local, mge-remote-repos, and public-remote-repos",
+        "handles": "releases"
+      },
+      {
+        "name": "libs-snapshot",
+        "description": "Combines libs-snapshot-local, libs-third-party-local, mge-remote-repos, and public-remote-repos",
+        "handles": "snapshots"
+      },
+      {
+        "name": "mge-remote",
+        "description": "Virtual proxy layer in front of mge-legacy-nexus for use in other virtual repositories",
+        "handles": "snapshots, releases"
+      },
+      {
+        "name": "public-remote-repos",
+        "description": "Combines jcenter, repo1, and sonatype for use in other virtual repositories",
+        "handles": "snapshots, releases"
+      }
+    ]
+  }
+]

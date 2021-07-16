@@ -1,0 +1,11 @@
+[
+  {
+    "name": "awsuselxmtd03",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "Internal & THQ",
+    "instance": "r3.large",
+    "az": "us-east-1a",
+    "ip": "10.37.34.13",
+    "os": "RHEL 6.10 (Santiago)"
+  }
+]

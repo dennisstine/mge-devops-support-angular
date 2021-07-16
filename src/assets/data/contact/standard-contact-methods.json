@@ -1,0 +1,14 @@
+[
+  {
+    "method": "BITS Request",
+    "isLink": true,
+    "embeddedText": "{{bitsUrl}}",
+    "purpose": "For non-emergency requests, enhancements, etc."
+  },
+  {
+    "method": "Email MTDevOps",
+    "isLink": true,
+    "embeddedText": "{{devopsInbox}}",
+    "purpose": "For other non-production questions, send an email to the inbox."
+  }
+]

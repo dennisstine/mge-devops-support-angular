@@ -1,0 +1,44 @@
+[
+  {
+    "name": "NodeJS v14",
+    "version": "14.15.4",
+    "endOfLife": "April 2023",
+    "notes": "Current Jenkins"
+  },
+  {
+    "name": "NodeJS v12",
+    "version": "12.20.1",
+    "endOfLife": "April 2022",
+    "notes": "Current Jenkins"
+  },
+  {
+    "name": "NodeJS v10",
+    "version": "10.23.1",
+    "endOfLife": "April 2021",
+    "notes": "Current Jenkins"
+  },
+  {
+    "name": "NodeJS v12",
+    "version": "12.0.0",
+    "endOfLife": "April 2022",
+    "notes": "Old Jenkins"
+  },
+  {
+    "name": "NodeJS v10",
+    "version": "10.9.0",
+    "endOfLife": "April 2021",
+    "notes": "Old Jenkins"
+  },
+  {
+    "name": "NodeJS v8",
+    "version": "8.9.0",
+    "endOfLife": "December 2019",
+    "notes": "Old Jenkins"
+  },
+  {
+    "name": "NodeJS v6",
+    "version": "6.9.4",
+    "endOfLife": "August 2019",
+    "notes": "Old Jenkins"
+  }
+]

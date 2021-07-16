@@ -1,0 +1,77 @@
+<div class="flexbox-parent container">
+  <div layout="row" layout-align="center center">
+
+    <h1 class="content-header">Non-CI/CD Tools</h1>
+    <h4>Some tools are not owned/supported by MGE DevOps</h4>
+    <h3>Links open in a new tab/window <fa-icon [icon]="['fas', 'external-link-alt']"></fa-icon></h3>
+
+    <mat-card class="custom-card-spacing">
+      <mat-card-header>
+        <div mat-card-avatar class="avatar-sumologic"></div>
+        <mat-card-title>Sumo Logic</mat-card-title>
+        <mat-card-subtitle>Log Aggregator</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Provides log management and analytics services that leverage machine-generated big data to deliver
+          real-time IT insights.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-raised-button class="mat-primary"
+           href="{{sumoSsoUrl}}" target="_blank">Sumo Logic SSO</a>
+        <a mat-raised-button href="{{sumoUrl}}" target="_blank">Username + Password Sign-in</a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="custom-card-spacing">
+      <mat-card-header>
+        <div mat-card-avatar class="avatar-pam"></div>
+        <mat-card-title>PAM</mat-card-title>
+        <mat-card-subtitle>BeyondTrust Privileged Access Management</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Maritz IT Services application for the secure storing, sharing, creating, and handling of privileged passwords.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-raised-button class="mat-primary" href="{{pamUrl}}" target="_blank">PAM</a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="custom-card-spacing">
+      <mat-card-header>
+        <div mat-card-avatar class="avatar-atlassian"></div>
+        <mat-card-title>Atlassian Products</mat-card-title>
+        <mat-card-subtitle>Confluence and Jira</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Jira: Plan, track, and release world-class software with the #1 software development tool used by agile teams.<br/>
+          Confluence: Organize your work, create documents, and discuss everything in one place.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-raised-button class="mat-primary" href="{{atlassianUrl}}" target="_blank">Atlassian</a>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="custom-card-spacing">
+      <mat-card-header>
+        <div mat-card-avatar class="avatar-nagios"></div>
+        <mat-card-title>Nagios</mat-card-title>
+        <mat-card-subtitle>Infrastructure Monitor</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Serves as the basic event scheduler, event processor, and alert manager for elements that are monitored.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-raised-button class="mat-primary" href="{{nagiosIntUrl}}" target="_blank">Nagios Internal</a>
+        <a mat-raised-button class="mat-primary" href="{{nagiosExtUrl}}" target="_blank">Nagios External</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+[
+  {
+    "name": "awsusesqlmtp06",
+    "sqlserver": "MS SQLServer/12.00.6118",
+    "application": "OLTP",
+    "instance": "m5.2xlarge",
+    "az": "us-east-1a",
+    "ip": "10.37.4.6",
+    "os": "Windows Server"
+  }
+]

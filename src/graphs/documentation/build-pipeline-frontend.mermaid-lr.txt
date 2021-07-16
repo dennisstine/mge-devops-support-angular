@@ -1,0 +1,24 @@
+graph LR
+    %% Developers code, commit, push to GitLab, repeat
+    DEV["fas:fa-code Developer Codes"] --> | fas:fa-code-branch Push Changes | GITLAB("fab:fa-gitlab GitLab")
+    GITLAB -.-> | fas:fa-user-edit Changes Needed | DEV
+    GITLAB --> JENKINS("fab:fa-jenkins Jenkins")
+
+    JENKINS --> TYPE{"Build or Deploy?"}
+    TYPE --> | Build | BUILD("far:fa-file-archive Create/Bundle Asset(s)")
+    TYPE --> | Deploy | DEPLOY-FE("Retieve Asset(s)")
+    BUILD --> PACKAGE("fas:fa-upload Upload Archive(s)")
+    PACKAGE --> | Frontend | RT-FRONTEND
+
+    DEPLOY-FE --> DEPLOY-FE-ENV{"Environment?"}
+
+    RT-FRONTEND -.-> | fas:fa-cloud-upload-alt Version | DEPLOY-FE
+
+    DEPLOY-FE-ENV --> | Development | DEPLOY-FE-ENV-DEV("fab:fa-aws Upload to S3")
+    DEPLOY-FE-ENV --> | Test | DEPLOY-FE-ENV-TEST("fab:fa-aws Upload to S3")
+    DEPLOY-FE-ENV --> | Production | DEPLOY-FE-ENV-PROD("fab:fa-aws Upload to S3")
+
+    subgraph REPO ["Artifactory"]
+      RT-FRONTEND["s3-ux-ui-local"]
+    end
+

@@ -1,0 +1,53 @@
+graph TB
+    %% Developers code, commit, push to GitLab, repeat
+    DEV["fas:fa-code Developer Codes"] --> | fas:fa-code-branch Push Changes | GITLAB("fab:fa-gitlab GitLab")
+    GITLAB -.-> | fas:fa-user-edit Changes Needed | DEV
+    GITLAB --> JENKINS("fab:fa-jenkins Jenkins")
+
+    JENKINS --> TYPE{"Build or Deploy?"}
+
+    %% Build and send to Artifactory or Deploy?
+    TYPE --> | Build | BUILD("far:fa-file-archive Create/Bundle Asset(s)")
+    TYPE --> | Deploy | DEPLOY{Backend or Frontend?}
+
+    %% Upload
+    BUILD --> PACKAGE("fas:fa-upload Upload Archive(s)")
+    PACKAGE --> | Backend | PACKAGE-BE{"Release or SNAPSHOT?"}
+    PACKAGE --> | Frontend | RT-FRONTEND
+
+    %% Release or SNAPSHOT?
+    PACKAGE-BE --> | Release | RT-RELEASE
+    PACKAGE-BE -.-> | Snapshot | RT-SNAPSHOT
+
+    %% Deploy paths - Backend or Frontend?
+    DEPLOY --> | Backend | DEPLOY-BE("Retieve Asset(s)")
+    DEPLOY --> | Frontend | DEPLOY-FE("Retieve Asset(s)")
+
+    %% Where?
+    DEPLOY-BE --> DEPLOY-BE-ENV{"Environment?"}
+    DEPLOY-FE --> DEPLOY-FE-ENV{"Environment?"}
+
+    %% Pull Backend artifacts
+    RT-RELEASE -.-> | fas:fa-cloud-upload-alt Version | DEPLOY-BE
+    RT-SNAPSHOT -.-> | fas:fa-cloud-upload-alt Latest | DEPLOY-BE
+
+    %% Deploy to webservers
+    DEPLOY-BE-ENV --> | Development | DEPLOY-BE-ENV-DEV("fas:fa-server Deploy Release/Snapshot")
+    DEPLOY-BE-ENV --> | Test | DEPLOY-BE-ENV-TEST-RELEASE("fas:fa-server Deploy Release")
+    DEPLOY-BE-ENV --> |Production | DEPLOY-BE-ENV-PROD-RELEASE("fas:fa-server Deploy Release")
+
+    %% Pull frontend archive
+    RT-FRONTEND -.-> | fas:fa-cloud-upload-alt Version | DEPLOY-FE
+
+    %% Deploy to S3
+    DEPLOY-FE-ENV --> | Development | DEPLOY-FE-ENV-DEV("fab:fa-aws Upload to S3")
+    DEPLOY-FE-ENV --> | Test | DEPLOY-FE-ENV-TEST("fab:fa-aws Upload to S3")
+    DEPLOY-FE-ENV --> | Production | DEPLOY-FE-ENV-PROD("fab:fa-aws Upload to S3")
+
+    %% Subgraph for Artifactory repos
+    subgraph REPO ["Artifactory"]
+      RT-RELEASE["libs-release-local"]
+      RT-SNAPSHOT["libs-snapshot-local"]
+      RT-FRONTEND["s3-ux-ui-local"]
+    end
+

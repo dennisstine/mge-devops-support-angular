@@ -1,0 +1,38 @@
+[
+  {
+    "name": "awsuselxmtt05",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "Internal",
+    "instance": "r3.large",
+    "az": "us-east-1a",
+    "ip": "10.37.18.5",
+    "os": "6.10 (Santiago)"
+  },
+  {
+    "name": "awsuselxmtt06",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "Internal",
+    "instance": "r3.large",
+    "az": "us-east-1b",
+    "ip": "10.37.18.6",
+    "os": "6.10 (Santiago)"
+  },
+  {
+    "name": "awsuselxmtt09",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "THQ",
+    "instance": "r3.large",
+    "az": "us-east-1a",
+    "ip": "10.37.18.9",
+    "os": "6.10 (Santiago)"
+  },
+  {
+    "name": "awsuselxmtt10",
+    "webserver": "JBoss EAP 6.2.4.GA",
+    "application": "THQ",
+    "instance": "r3.large",
+    "az": "us-east-1b",
+    "ip": "10.37.18.10",
+    "os": "6.10 (Santiago)"
+  }
+]

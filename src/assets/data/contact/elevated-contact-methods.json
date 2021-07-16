@@ -1,0 +1,26 @@
+[
+  {
+    "method": "Email MTDevOps",
+    "isLink": true,
+    "embeddedText": "{{devopsInboxMailToUrgent}}",
+    "purpose": "For urgent requests (within 24 hours).  Email the inbox with DevOps team members Cc'd."
+  },
+  {
+    "method": "Escalate - Call the DOWN line",
+    "isLink": false,
+    "embeddedText": "",
+    "purpose": "{{downSwatLine}} forwards to a member of DevOps, Architecture, or another primary on-call who can help or escalate further."
+  },
+  {
+    "method": "Escalate - GroupMe",
+    "isLink": false,
+    "embeddedText": "",
+    "purpose": "Managers, the DevOps team, and Architecture can start a group chat in GroupMe for awareness and further escalation if needed."
+  },
+  {
+    "method": "Escalate - Have the MGE SWAT line opened",
+    "isLink": false,
+    "embeddedText": "",
+    "purpose": "The MGE SWAT line is opened and instructions are sent to necessary people.  Usually, a GroupMe chat is already happening."
+  }
+]

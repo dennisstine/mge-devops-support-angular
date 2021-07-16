@@ -1,0 +1,22 @@
+[
+  {
+    "name": "mge-legacy-nexus",
+    "description": "Proxy to Nexus for caching previous MGE artifacts into Artifactory as requested",
+    "handles": "snapshots, releases"
+  },
+  {
+    "name": "jcenter",
+    "description": "Public Maven repository",
+    "handles": "snapshots, releases"
+  },
+  {
+    "name": "repo1",
+    "description": "Public Maven repository",
+    "handles": "snapshots, releases"
+  },
+  {
+    "name": "sonatype",
+    "description": "Public Maven repository",
+    "handles": "releases"
+  }
+]

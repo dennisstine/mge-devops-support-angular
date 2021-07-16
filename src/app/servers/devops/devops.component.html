@@ -1,0 +1,49 @@
+<h3 class="content-header smaller">mge-corp-devops (534664078866)</h3>
+
+<!-- DevOps -->
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        DevOps Servers
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-table [dataSource]="devopsData" class="mat-elevation-z8" matTableExporter #devopsExporter="matTableExporter">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="webserver">
+        <mat-header-cell *matHeaderCellDef> Web Server </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.webserver}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="application">
+        <mat-header-cell *matHeaderCellDef> Application </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.application}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="instance">
+        <mat-header-cell *matHeaderCellDef> Instance </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.instance}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="az">
+        <mat-header-cell *matHeaderCellDef> Availability Zone </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.az}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ip">
+        <mat-header-cell *matHeaderCellDef> IP </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.ip}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="os">
+        <mat-header-cell *matHeaderCellDef> Operating System </mat-header-cell>
+        <mat-cell *matCellDef="let server"> {{server.os}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedWebColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedWebColumns;"></mat-row>
+    </mat-table>
+    <button mat-raised-button class="mat-primary download-btn"
+            (click)="devopsExporter.exportTable('csv', {fileName:'aws-prod-tc-list'})">
+      <fa-icon [icon]="['fas', 'download']"></fa-icon>&nbsp;Download CSV</button>
+  </mat-expansion-panel>
+  <!-- End DevOps -->
+</mat-accordion>

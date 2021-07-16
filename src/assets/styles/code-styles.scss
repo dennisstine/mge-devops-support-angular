@@ -1,0 +1,26 @@
+pre, code {
+  font-size: 0.85em;
+  font-family: LiberationMono, Consolas, Inconsolata, Courier, monospace;
+}
+code {
+  margin: 0 0.15em;
+  padding: 0 0.3em;
+  white-space: pre-wrap;
+  border: 1px solid #EAEAEA;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+  display: inline;
+}
+pre {
+  font-size: 1em;
+  line-height: 1.2em;
+  overflow: auto;
+}
+pre code {
+  white-space: pre;
+  overflow: auto;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  padding: 0.5em 0.7em;
+  display: block !important;
+}

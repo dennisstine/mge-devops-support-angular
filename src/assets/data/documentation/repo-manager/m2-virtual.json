@@ -1,0 +1,22 @@
+[
+  {
+    "name": "libs-release",
+    "description": "Combines libs-release-local, libs-third-party-local, mge-remote-repos, and public-remote-repos",
+    "handles": "releases"
+  },
+  {
+    "name": "libs-snapshot",
+    "description": "Combines libs-snapshot-local, libs-third-party-local, mge-remote-repos, and public-remote-repos",
+    "handles": "snapshots"
+  },
+  {
+    "name": "mge-remote",
+    "description": "Virtual proxy layer in front of mge-legacy-nexus for use in other virtual repositories",
+    "handles": "snapshots, releases"
+  },
+  {
+    "name": "public-remote-repos",
+    "description": "Combines jcenter, repo1, and sonatype for use in other virtual repositories",
+    "handles": "snapshots, releases"
+  }
+]
